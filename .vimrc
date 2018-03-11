@@ -1,4 +1,9 @@
-execute pathogen#infect()
+runtime! autoload/pathogen.vim
+
+if exists("g:loaded_pathogen")
+    " load pathogen for budle support
+    call pathogen#infect()
+endif
 
 set nocompatible
 
@@ -9,8 +14,8 @@ set laststatus=2
 "colorscheme base16-eighties
 
 if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
+    let base16colorspace=256
+    source ~/.vimrc_background
 endif
 
 let g:airline_powerline_fonts=1
@@ -59,7 +64,7 @@ nnoremap ^ <nop>
 
 let devassistant=0
 if devassistant==1
- :source /usr/share/devassistant/files/snippets/vim/vimrc
+    :source /usr/share/devassistant/files/snippets/vim/vimrc
 endif
 "END_DEVASSISTANT_1
 
@@ -95,4 +100,3 @@ let g:gitgutter_highlight_lines = 0
 let g:gitgutter_async = 1
 
 let g:airline_powerline_fonts = 1
-
